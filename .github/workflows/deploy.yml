@@ -29,11 +29,11 @@ jobs:
           node-version: lts/*
 
       - name: Build step
-        run: "npm install && npm run build" # 📝 Update the build command(s) if necessary
+        run: "npm install && npm run build:all" # 📝 Update the build command(s) if necessary
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "bqy-meting-api"
-          entrypoint: "index.js" # 📝 Update the entrypoint if necessary
+          entrypoint: "deno.js" # 📝 Update the entrypoint if necessary
           root: "." # 📝 Update the root if necessary
